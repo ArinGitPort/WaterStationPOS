@@ -102,84 +102,87 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="118" max="32767" attributes="0"/>
+                          <EmptySpace pref="111" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton4" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Component id="ProductButton4" min="-2" pref="182" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Component id="ProductButton5" min="-2" pref="182" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton1" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Component id="ProductButton1" min="-2" pref="182" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton5" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Component id="ProductButton2" min="-2" pref="182" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton6" min="-2" pref="182" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="182" max="-2" attributes="0"/>
+                              <Component id="ProductButton3" min="-2" pref="182" max="-2" attributes="0"/>
+                              <Component id="ProductButton6" min="-2" pref="182" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="120" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton1" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="jButton5" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="jButton6" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="ProductButton1" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="ProductButton2" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="ProductButton3" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton4" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="ProductButton4" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="ProductButton5" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="ProductButton6" alignment="3" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="265" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="ProductButton1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Product"/>
+                    <Property name="text" type="java.lang.String" value="Slim Gallon"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProductButton1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="ProductButton6">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Product"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="ProductButton5">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Product"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton4">
+                <Component class="javax.swing.JButton" name="ProductButton4">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Product"/>
+                    <Property name="text" type="java.lang.String" value="Pet Bottle"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="ProductButton2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Product"/>
+                    <Property name="text" type="java.lang.String" value="Round Gallon"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProductButton2ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton6">
+                <Component class="javax.swing.JButton" name="ProductButton3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Product"/>
+                    <Property name="text" type="java.lang.String" value="Alkaline"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProductButton3ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -190,13 +193,16 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="CartTable">
+                <Component class="javax.swing.JTable" name="CartJTable">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="3" rowCount="4">
+                      <Table columnCount="3" rowCount="0">
                         <Column editable="false" title="Item" type="java.lang.Object"/>
                         <Column editable="true" title="Quantity" type="java.lang.Integer"/>
                         <Column editable="true" title="Price" type="java.lang.Integer"/>
@@ -257,7 +263,17 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextArea" name="ReceiptTextArea">
                       <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="99" green="99" red="99" type="rgb"/>
+                        </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="rows" type="int" value="5"/>
                       </Properties>
                     </Component>
@@ -279,18 +295,18 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jButton18" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="checkoutButton" min="-2" pref="149" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton20" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="removeFromCartButton" min="-2" pref="149" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton19" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="modifyQtyButton" min="-2" pref="149" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jButton9" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="discountButton" min="-2" pref="149" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton21" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="addCustomProductButton" min="-2" pref="149" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Component id="jButton10" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="modifyPriceButton" min="-2" pref="149" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
@@ -302,15 +318,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton18" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jButton20" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jButton19" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="checkoutButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="removeFromCartButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="modifyQtyButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="46" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton9" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jButton10" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jButton21" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="discountButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="modifyPriceButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="addCustomProductButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
@@ -318,7 +334,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton18">
+                <Component class="javax.swing.JButton" name="checkoutButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="CHECKOUT"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -328,10 +344,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkoutButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton19">
+                <Component class="javax.swing.JButton" name="modifyQtyButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="MODIFY QTY"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -341,10 +357,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton19ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyQtyButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton20">
+                <Component class="javax.swing.JButton" name="removeFromCartButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="REMOVE FROM CART"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -354,10 +370,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton20ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeFromCartButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton9">
+                <Component class="javax.swing.JButton" name="discountButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="DISCOUNT"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -367,10 +383,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="discountButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton10">
+                <Component class="javax.swing.JButton" name="modifyPriceButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="MODIFY PRICE"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -380,10 +396,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyPriceButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton21">
+                <Component class="javax.swing.JButton" name="addCustomProductButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ADD CUSTOM PRODUCT"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -393,7 +409,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton21ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCustomProductButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -450,10 +466,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable2">
+                <Component class="javax.swing.JTable" name="InventoryJTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
+                      <Table columnCount="4" rowCount="0">
                         <Column editable="true" title="ID" type="java.lang.Object"/>
                         <Column editable="true" title="Item" type="java.lang.Object"/>
                         <Column editable="true" title="Stocks" type="java.lang.Object"/>
@@ -504,9 +520,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jButton16" min="-2" pref="178" max="-2" attributes="0"/>
-                              <Component id="jButton15" min="-2" pref="178" max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" pref="178" max="-2" attributes="0"/>
+                              <Component id="reduceStocksButton1" min="-2" pref="178" max="-2" attributes="0"/>
+                              <Component id="modifyInventoryPriceButton" min="-2" pref="178" max="-2" attributes="0"/>
+                              <Component id="reduceStocksButton" min="-2" pref="178" max="-2" attributes="0"/>
+                              <Component id="addStocksButton" min="-2" pref="178" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="106" max="32767" attributes="0"/>
                       </Group>
@@ -516,18 +533,20 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
-                          <Component id="jButton8" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="addStocksButton" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="jButton15" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="reduceStocksButton" min="-2" pref="59" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="reduceStocksButton1" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="jButton16" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="modifyInventoryPriceButton" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton8">
+                <Component class="javax.swing.JButton" name="addStocksButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ADD STOCKS"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -537,10 +556,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addStocksButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton15">
+                <Component class="javax.swing.JButton" name="reduceStocksButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="REDUCE STOCKS"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -550,10 +569,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reduceStocksButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton16">
+                <Component class="javax.swing.JButton" name="modifyInventoryPriceButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="MODIFY PRICE"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -563,7 +582,20 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyInventoryPriceButtonActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="reduceStocksButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ADD NEW PRODUCT"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reduceStocksButton1ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -617,10 +649,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="generateReportJTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
+                      <Table columnCount="4" rowCount="0">
                         <Column editable="true" title="Date" type="java.lang.Object"/>
                         <Column editable="true" title="Item" type="java.lang.Object"/>
                         <Column editable="true" title="QTY Sold" type="java.lang.Object"/>
@@ -670,12 +702,12 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="textArea1" max="32767" attributes="0"/>
+                          <Component id="reportTextArea" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="136" max="32767" attributes="0"/>
-                          <Component id="jButton7" min="-2" pref="143" max="-2" attributes="0"/>
+                          <Component id="exportReportToPDFButton" min="-2" pref="143" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -684,18 +716,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="textArea1" min="-2" pref="597" max="-2" attributes="0"/>
+                          <Component id="reportTextArea" min="-2" pref="597" max="-2" attributes="0"/>
                           <EmptySpace pref="18" max="32767" attributes="0"/>
-                          <Component id="jButton7" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="exportReportToPDFButton" min="-2" pref="52" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="java.awt.TextArea" name="textArea1">
+                <Component class="java.awt.TextArea" name="reportTextArea">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton7">
+                <Component class="javax.swing.JButton" name="exportReportToPDFButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="EXPORT REPORT"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -705,7 +737,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportReportToPDFButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

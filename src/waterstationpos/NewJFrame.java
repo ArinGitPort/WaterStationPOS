@@ -4,9 +4,17 @@
  */
 package waterstationpos;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,11 +22,15 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class NewJFrame extends javax.swing.JFrame {
 
+    List<Product> cart = new ArrayList<>();
+
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+        addTableModelListenerToCartJTable();
+
     }
 
     /**
@@ -33,37 +45,38 @@ public class NewJFrame extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Sales = new javax.swing.JPanel();
         SalesPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        ProductButton1 = new javax.swing.JButton();
+        ProductButton6 = new javax.swing.JButton();
+        ProductButton5 = new javax.swing.JButton();
+        ProductButton4 = new javax.swing.JButton();
+        ProductButton2 = new javax.swing.JButton();
+        ProductButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        CartTable = new javax.swing.JTable();
+        CartJTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ReceiptTextArea = new javax.swing.JTextArea();
         UserOptionPanel = new javax.swing.JPanel();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
+        checkoutButton = new javax.swing.JButton();
+        modifyQtyButton = new javax.swing.JButton();
+        removeFromCartButton = new javax.swing.JButton();
+        discountButton = new javax.swing.JButton();
+        modifyPriceButton = new javax.swing.JButton();
+        addCustomProductButton = new javax.swing.JButton();
         InventoryTab = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        InventoryJTable = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        addStocksButton = new javax.swing.JButton();
+        reduceStocksButton = new javax.swing.JButton();
+        modifyInventoryPriceButton = new javax.swing.JButton();
+        reduceStocksButton1 = new javax.swing.JButton();
         ReportTab = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        generateReportJTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        textArea1 = new java.awt.TextArea();
-        jButton7 = new javax.swing.JButton();
+        reportTextArea = new java.awt.TextArea();
+        exportReportToPDFButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,72 +84,75 @@ public class NewJFrame extends javax.swing.JFrame {
 
         SalesPanel.setBackground(new java.awt.Color(153, 153, 153));
 
-        jButton1.setText("Product");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ProductButton1.setText("Slim Gallon");
+        ProductButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ProductButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Product");
+        ProductButton6.setText("Product");
 
-        jButton3.setText("Product");
+        ProductButton5.setText("Product");
 
-        jButton4.setText("Product");
+        ProductButton4.setText("Pet Bottle");
 
-        jButton5.setText("Product");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ProductButton2.setText("Round Gallon");
+        ProductButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ProductButton2ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Product");
+        ProductButton3.setText("Alkaline");
+        ProductButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SalesPanelLayout = new javax.swing.GroupLayout(SalesPanel);
         SalesPanel.setLayout(SalesPanelLayout);
         SalesPanelLayout.setHorizontalGroup(
             SalesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SalesPanelLayout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addGroup(SalesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SalesPanelLayout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ProductButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ProductButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(SalesPanelLayout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ProductButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ProductButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(SalesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86))
+                    .addComponent(ProductButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(93, 93, 93))
         );
         SalesPanelLayout.setVerticalGroup(
             SalesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SalesPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SalesPanelLayout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
                 .addGroup(SalesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(ProductButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
                 .addGroup(SalesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(265, Short.MAX_VALUE))
+                    .addComponent(ProductButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106))
         );
 
-        CartTable.setBackground(new java.awt.Color(153, 153, 153));
-        CartTable.setModel(new javax.swing.table.DefaultTableModel(
+        CartJTable.setBackground(new java.awt.Color(153, 153, 153));
+        CartJTable.setForeground(new java.awt.Color(0, 0, 0));
+        CartJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Item", "Quantity", "Price"
@@ -157,16 +173,20 @@ public class NewJFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(CartTable);
-        if (CartTable.getColumnModel().getColumnCount() > 0) {
-            CartTable.getColumnModel().getColumn(0).setResizable(false);
-            CartTable.getColumnModel().getColumn(1).setResizable(false);
-            CartTable.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane1.setViewportView(CartJTable);
+        if (CartJTable.getColumnModel().getColumnCount() > 0) {
+            CartJTable.getColumnModel().getColumn(0).setResizable(false);
+            CartJTable.getColumnModel().getColumn(1).setResizable(false);
+            CartJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
+        ReceiptTextArea.setEditable(false);
+        ReceiptTextArea.setBackground(new java.awt.Color(153, 153, 153));
         ReceiptTextArea.setColumns(20);
+        ReceiptTextArea.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ReceiptTextArea.setForeground(new java.awt.Color(255, 255, 255));
         ReceiptTextArea.setRows(5);
         jScrollPane2.setViewportView(ReceiptTextArea);
 
@@ -183,51 +203,51 @@ public class NewJFrame extends javax.swing.JFrame {
 
         UserOptionPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton18.setText("CHECKOUT");
-        jButton18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        checkoutButton.setText("CHECKOUT");
+        checkoutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        checkoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                checkoutButtonActionPerformed(evt);
             }
         });
 
-        jButton19.setText("MODIFY QTY");
-        jButton19.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        modifyQtyButton.setText("MODIFY QTY");
+        modifyQtyButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modifyQtyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                modifyQtyButtonActionPerformed(evt);
             }
         });
 
-        jButton20.setText("REMOVE FROM CART");
-        jButton20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        removeFromCartButton.setText("REMOVE FROM CART");
+        removeFromCartButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        removeFromCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                removeFromCartButtonActionPerformed(evt);
             }
         });
 
-        jButton9.setText("DISCOUNT");
-        jButton9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        discountButton.setText("DISCOUNT");
+        discountButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        discountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                discountButtonActionPerformed(evt);
             }
         });
 
-        jButton10.setText("MODIFY PRICE");
-        jButton10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        modifyPriceButton.setText("MODIFY PRICE");
+        modifyPriceButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modifyPriceButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                modifyPriceButtonActionPerformed(evt);
             }
         });
 
-        jButton21.setText("ADD CUSTOM PRODUCT");
-        jButton21.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        addCustomProductButton.setText("ADD CUSTOM PRODUCT");
+        addCustomProductButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addCustomProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                addCustomProductButtonActionPerformed(evt);
             }
         });
 
@@ -239,17 +259,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(UserOptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(UserOptionPanelLayout.createSequentialGroup()
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(checkoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(removeFromCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(modifyQtyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(UserOptionPanelLayout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(discountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addCustomProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(modifyPriceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(138, 138, 138))
         );
         UserOptionPanelLayout.setVerticalGroup(
@@ -257,14 +277,14 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(UserOptionPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(UserOptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(checkoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeFromCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modifyQtyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(UserOptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(discountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modifyPriceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addCustomProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
@@ -306,42 +326,47 @@ public class NewJFrame extends javax.swing.JFrame {
 
         InventoryTab.setBackground(new java.awt.Color(0, 0, 51));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        InventoryJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "Item", "Stocks", "Price"
             }
         ));
-        jScrollPane4.setViewportView(jTable2);
+        jScrollPane4.setViewportView(InventoryJTable);
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 102));
 
-        jButton8.setText("ADD STOCKS");
-        jButton8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        addStocksButton.setText("ADD STOCKS");
+        addStocksButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addStocksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                addStocksButtonActionPerformed(evt);
             }
         });
 
-        jButton15.setText("REDUCE STOCKS");
-        jButton15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        reduceStocksButton.setText("REDUCE STOCKS");
+        reduceStocksButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reduceStocksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                reduceStocksButtonActionPerformed(evt);
             }
         });
 
-        jButton16.setText("MODIFY PRICE");
-        jButton16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        modifyInventoryPriceButton.setText("MODIFY PRICE");
+        modifyInventoryPriceButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modifyInventoryPriceButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                modifyInventoryPriceButtonActionPerformed(evt);
+            }
+        });
+
+        reduceStocksButton1.setText("ADD NEW PRODUCT");
+        reduceStocksButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reduceStocksButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reduceStocksButton1ActionPerformed(evt);
             }
         });
 
@@ -352,20 +377,23 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(reduceStocksButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modifyInventoryPriceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reduceStocksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addStocksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(175, 175, 175)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addStocksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(reduceStocksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(reduceStocksButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(modifyInventoryPriceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -396,26 +424,23 @@ public class NewJFrame extends javax.swing.JFrame {
 
         ReportTab.setBackground(new java.awt.Color(0, 0, 51));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        generateReportJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Date", "Item", "QTY Sold", "Total Sales"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(generateReportJTable);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
-        jButton7.setText("EXPORT REPORT");
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        exportReportToPDFButton.setText("EXPORT REPORT");
+        exportReportToPDFButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        exportReportToPDFButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                exportReportToPDFButtonActionPerformed(evt);
             }
         });
 
@@ -425,20 +450,20 @@ public class NewJFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(reportTextArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(136, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(exportReportToPDFButton, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(133, 133, 133))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(reportTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(exportReportToPDFButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
 
@@ -470,53 +495,204 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ProductButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_ProductButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ProductButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton1ActionPerformed
+        // Retrieve product details (replace with your actual product details)
+        Product product = new Product("Slim Gallon", 10.0); // Example
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+        // Prompt the user for quantity
+        String input = JOptionPane.showInputDialog(this, "Enter Gallon for " + product.getName() + ":");
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+        // Check if user canceled the input or entered invalid input
+        if (input != null && !input.isEmpty()) {
+            try {
+                int quantity = Integer.parseInt(input);
+                if (quantity > 0) {
+                    // Check if the product already exists in the cart
+                    boolean productFound = false;
+                    for (int i = 0; i < cart.size(); i++) {
+                        Product existingProduct = cart.get(i);
+                        if (existingProduct.getName().equals(product.getName())) {
+                            // Update quantity of existing product
+                            existingProduct.setQuantity(existingProduct.getQuantity() + quantity);
+                            // Update quantity in the cart table
+                            CartJTable.setValueAt(existingProduct.getQuantity(), i, 1);
+                            productFound = true;
+                            break;
+                        }
+                    }
+                    if (!productFound) {
+                        // Add product to cart with the specified quantity
+                        product.setQuantity(quantity);
+                        cart.add(product);
+                        // Add new row to cart table
+                        DefaultTableModel model = (DefaultTableModel) CartJTable.getModel();
+                        model.addRow(new Object[]{product.getName(), quantity, product.getPrice()});
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Quantity must be a positive integer.");
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid integer quantity.");
+            }
+        }
+    }//GEN-LAST:event_ProductButton1ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_checkoutButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    private void modifyQtyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyQtyButtonActionPerformed
+        // Get the selected row index in the CartJTable
+        int selectedRowIndex = CartJTable.getSelectedRow();
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+        // Check if a row is selected
+        if (selectedRowIndex != -1) { // -1 indicates no row is selected
+            // Prompt the user to enter the new quantity
+            String input = JOptionPane.showInputDialog(this, "Enter the new quantity:", "Modify Quantity", JOptionPane.QUESTION_MESSAGE);
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+            // Check if the user entered a valid input
+            if (input != null && !input.isEmpty()) {
+                try {
+                    // Parse the input to an integer
+                    int newQuantity = Integer.parseInt(input);
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+                    // Check if the new quantity is valid (greater than 0)
+                    if (newQuantity > 0) {
+                        // Update the quantity in the CartJTable
+                        CartJTable.getModel().setValueAt(newQuantity, selectedRowIndex, 1); // Assuming quantity is in the second column
+                        // Update the receipt after modifying the quantity
+                        printReceipt();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Invalid Quantity", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(this, "Please enter a valid integer.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            // If no row is selected, show a message to the user
+            JOptionPane.showMessageDialog(this, "Please select a row to modify.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
+        }    }//GEN-LAST:event_modifyQtyButtonActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void removeFromCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromCartButtonActionPerformed
+        // Get the selected row index in the CartJTable
+        int selectedRowIndex = CartJTable.getSelectedRow();
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+        // Check if a row is selected
+        if (selectedRowIndex != -1) { // -1 indicates no row is selected
+            // Remove the selected row from the CartJTable
+            DefaultTableModel model = (DefaultTableModel) CartJTable.getModel();
+            model.removeRow(selectedRowIndex);
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+            // Update the receipt after removing the item
+            printReceipt();
+        } else {
+            // If no row is selected, show a message to the user
+            JOptionPane.showMessageDialog(this, "Please select a row to remove.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
+        }    }//GEN-LAST:event_removeFromCartButtonActionPerformed
+
+    private void discountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discountButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_discountButtonActionPerformed
+
+    private void modifyPriceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyPriceButtonActionPerformed
+        // Get the selected row index in the CartJTable
+        int selectedRowIndex = CartJTable.getSelectedRow();
+
+        // Check if a row is selected
+        if (selectedRowIndex != -1) { // -1 indicates no row is selected
+            // Prompt the user to enter the new price
+            String input = JOptionPane.showInputDialog(this, "Enter the new price:", "Modify Price", JOptionPane.QUESTION_MESSAGE);
+
+            // Check if the user entered a valid input
+            if (input != null && !input.isEmpty()) {
+                try {
+                    // Parse the input to a double
+                    double newPrice = Double.parseDouble(input);
+
+                    // Check if the new price is valid (greater than 0)
+                    if (newPrice > 0) {
+                        // Update the price in the CartJTable
+                        CartJTable.getModel().setValueAt(newPrice, selectedRowIndex, 2); // Assuming price is in the third column (index 2)
+                        // Update the receipt after modifying the price
+                        printReceipt();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Price must be greater than 0.", "Invalid Price", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(this, "Please enter a valid number.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            // If no row is selected, show a message to the user
+            JOptionPane.showMessageDialog(this, "Please select a row to modify.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
+        }    }//GEN-LAST:event_modifyPriceButtonActionPerformed
+
+    private void addCustomProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomProductButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addCustomProductButtonActionPerformed
+
+    private void exportReportToPDFButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportReportToPDFButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exportReportToPDFButtonActionPerformed
+
+    private void addStocksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStocksButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addStocksButtonActionPerformed
+
+    private void reduceStocksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reduceStocksButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reduceStocksButtonActionPerformed
+
+    private void modifyInventoryPriceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyInventoryPriceButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyInventoryPriceButtonActionPerformed
+
+    private void reduceStocksButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reduceStocksButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reduceStocksButton1ActionPerformed
+
+    private void ProductButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductButton3ActionPerformed
+
+    //METHODS
+    private void printReceipt() {
+        // Clear the ReceiptTextArea before printing new receipt
+        ReceiptTextArea.setText("");
+
+        // Get the table model of CartJTable
+        DefaultTableModel model = (DefaultTableModel) CartJTable.getModel();
+
+        // Iterate through the rows of the table
+        for (int i = 0; i < model.getRowCount(); i++) {
+            String itemName = model.getValueAt(i, 0).toString(); // Get item name from the first column
+            int quantity = Integer.parseInt(model.getValueAt(i, 1).toString()); // Get quantity from the second column
+            double price = Double.parseDouble(model.getValueAt(i, 2).toString()); // Get price from the third column
+
+            // Format item details and append to the ReceiptTextArea
+            String itemDetails = itemName + " Quantity: " + quantity + ": Php " + (quantity * price) + "\n";
+            ReceiptTextArea.append(itemDetails);
+        }
+    }
+
+    //ADDITIONAL LISTENERS
+    private void addTableModelListenerToCartJTable() {
+        // Add a TableModelListener to CartJTable's model
+        CartJTable.getModel().addTableModelListener(new TableModelListener() {
+            @Override
+            public void tableChanged(TableModelEvent e) {
+                if (e.getType() == TableModelEvent.INSERT) {
+                    // If a row is inserted, update the receipt
+                    printReceipt();
+                }
+            }
+        });
+    }
 
     /**
      * @param args the command line arguments
@@ -554,44 +730,40 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable CartTable;
+    private javax.swing.JTable CartJTable;
+    private javax.swing.JTable InventoryJTable;
     private javax.swing.JPanel InventoryTab;
+    private javax.swing.JButton ProductButton1;
+    private javax.swing.JButton ProductButton2;
+    private javax.swing.JButton ProductButton3;
+    private javax.swing.JButton ProductButton4;
+    private javax.swing.JButton ProductButton5;
+    private javax.swing.JButton ProductButton6;
     private javax.swing.JTextArea ReceiptTextArea;
     private javax.swing.JPanel ReportTab;
     private javax.swing.JPanel Sales;
     private javax.swing.JPanel SalesPanel;
     private javax.swing.JPanel UserOptionPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton addCustomProductButton;
+    private javax.swing.JButton addStocksButton;
+    private javax.swing.JButton checkoutButton;
+    private javax.swing.JButton discountButton;
+    private javax.swing.JButton exportReportToPDFButton;
+    private javax.swing.JTable generateReportJTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private java.awt.TextArea textArea1;
+    private javax.swing.JButton modifyInventoryPriceButton;
+    private javax.swing.JButton modifyPriceButton;
+    private javax.swing.JButton modifyQtyButton;
+    private javax.swing.JButton reduceStocksButton;
+    private javax.swing.JButton reduceStocksButton1;
+    private javax.swing.JButton removeFromCartButton;
+    private java.awt.TextArea reportTextArea;
     // End of variables declaration//GEN-END:variables
 }
